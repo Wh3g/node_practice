@@ -8,3 +8,18 @@ http.createServer(function (req, res) {
         return res.end();
     });
 }).listen(8080);
+
+fs.appendFile('myNewFile.txt', 'Hello content!', function (err) {
+    if (err) throw err;
+    console.log('Saved!')
+});
+
+fs.open('myNewFile2.txt', 'w', function (err, file) {
+    if (err) throw err;
+    console.log('Saved!');
+});
+
+fs.writeFile('myNewFile3.txt', 'Hello content!', function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+});
